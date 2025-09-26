@@ -6,39 +6,33 @@ especializacao(ciencia_de_dados).
 especializacao(ciberseguranca).
 
 
-% TRILHAS
-trilha(computacao_quantica, 'Estudo e desenvolvimento de sistemas baseados nos principios da mecanica quantica.'). 
-trilha(internet_of_things, 'Desenvolvimento de sistemas conectados envolvendo sensores, dispositivos embarcados e automacao.').  
-trilha(desenvolvimento_de_jogos, 'Design, programação gráfica e uso de engines especializadas para criacao de jogos digitais.'). 
+% TRILHAS (especializacao, descricao)
+trilha(computacao_quantica, 'Estudo e desenvolvimento de sistemas baseados nos principios da mecanica quantica.').
+trilha(internet_of_things, 'Desenvolvimento de sistemas conectados envolvendo sensores, dispositivos embarcados e automacao.').
+trilha(desenvolvimento_de_jogos, 'Design, programação gráfica e uso de engines especializadas para criacao de jogos digitais.').  
 trilha(ciencia_de_dados, 'Análise e interpretação de grandes volumes de dados para gerar insights e apoiar decisões.').
 trilha(ciberseguranca, 'Proteção de sistemas, redes e informações contra ataques e ameaças ciberneticas.').
 
 
 % HABILIDADES
-
-% COMPUTACAO QUANTICA
 habilidade(fisica).
 habilidade(matematica).
 habilidade(pesquisa).
-% IOT
 habilidade(eletronica).
 habilidade(solucoes).
 habilidade(automacao).
-% DESENVOLVIMENTO DE JOGOS
 habilidade(design).
 habilidade(user_experience).
 habilidade(criatividade).
-% CIENCIA DE DADOS
 habilidade(estatistica).
 habilidade(analise).
 habilidade(tomada_de_decisao).
-% CIBERSEGURANCA
 habilidade(criptografia).
 habilidade(investigacao_de_falhas).
 habilidade(raciocinio_logico).
 
 
-% PERFIS
+% PERFIS (especializacao, habilidade, pontos)
 
 % COMPUTACAO QUANTICA
 perfil(computacao_quantica, fisica, 5).
@@ -83,7 +77,6 @@ perfil(internet_of_things, user_experience, 1).
 perfil(internet_of_things, criptografia, 1).
 
 % DESENVOLVIMENTO DE JOGOS
-
 perfil(desenvolvimento_de_jogos, criatividade, 5).
 perfil(desenvolvimento_de_jogos, design, 5).
 perfil(desenvolvimento_de_jogos, user_experience, 5).
@@ -105,29 +98,27 @@ perfil(desenvolvimento_de_jogos, criptografia, 1).
 perfil(desenvolvimento_de_jogos, investigacao_de_falhas, 1).
 
 % CIENCIA DE DADOS
+perfil(ciencia_de_dados, estatistica, 5).
+perfil(ciencia_de_dados, analise, 5).
+perfil(ciencia_de_dados, tomada_de_decisao, 5).
 
-perfil(bigdata, estatistica, 5).
-perfil(bigdata, analise, 5).
-perfil(bigdata, tomada_de_decisao, 5).
+perfil(ciencia_de_dados, matematica, 4).
+perfil(ciencia_de_dados, raciocinio_logico, 4).
+perfil(ciencia_de_dados, pesquisa, 4).
 
-perfil(bigdata, matematica, 4).
-perfil(bigdata, raciocinio_logico, 4).
-perfil(bigdata, pesquisa, 4).
+perfil(ciencia_de_dados, solucoes, 3).
+perfil(ciencia_de_dados, automacao, 3).
+perfil(ciencia_de_dados, criatividade, 3).
 
-perfil(bigdata, solucoes, 3).
-perfil(bigdata, automacao, 3).
-perfil(bigdata, criatividade, 3).
+perfil(ciencia_de_dados, fisica, 2).
+perfil(ciencia_de_dados, design, 2).
+perfil(ciencia_de_dados, user_experience, 2).
 
-perfil(bigdata, fisica, 2).
-perfil(bigdata, design, 2).
-perfil(bigdata, user_experience, 2).
-
-perfil(bigdata, criptografia, 1).
-perfil(bigdata, eletronica, 1).
-perfil(bigdata, investigacao_de_falhas, 1).
+perfil(ciencia_de_dados, criptografia, 1).
+perfil(ciencia_de_dados, eletronica, 1).
+perfil(ciencia_de_dados, investigacao_de_falhas, 1).
 
 % CIBERSEGURANCA
-
 perfil(ciberseguranca, criptografia, 5).
 perfil(ciberseguranca, investigacao_de_falhas, 5).
 perfil(ciberseguranca, raciocinio_logico, 5).
@@ -147,3 +138,20 @@ perfil(ciberseguranca, criatividade, 2).
 perfil(ciberseguranca, eletronica, 1).
 perfil(ciberseguranca, design, 1).
 perfil(ciberseguranca, user_experience, 1).
+
+% PERGUNTAS (id_pergunta, pergunta, habilidade)
+pergunta(1, 'Voce tem afinidade com FISICA?', fisica).
+pergunta(2, 'Voce tem afinidade com MATEMATICA?', matematica).
+pergunta(3, 'Voce tem afinidade com PESQUISA?', pesquisa).
+pergunta(4, 'Voce tem afinidade com ELETRONICA?', eletronica).
+pergunta(5, 'Voce tem afinidade com SOLUCOES?', solucoes).
+pergunta(6, 'Voce tem afinidade com AUTOMACAO?', automacao).
+pergunta(7, 'Voce tem afinidade com DESIGN?', design).
+pergunta(8, 'Voce tem afinidade com USER EXPERIENCE?', user_experience).
+pergunta(9, 'Voce tem afinidade com CRIATIVIDADE?', criatividade).
+pergunta(10, 'Voce tem afinidade com ESTATISTICA?', estatistica).
+pergunta(11, 'Voce tem afinidade com ANALISE?', analise).
+pergunta(12, 'Voce tem afinidade com TOMADA DE DECISAO?', tomada_de_decisao).
+pergunta(13, 'Voce tem afinidade com CRIPTOGRAFIA?', criptografia).
+pergunta(14, 'Voce tem afinidade com INVESTIGACAO DE FALHAS?', investigacao_de_falhas).
+pergunta(15, 'Voce tem afinidade com RACIOCINIO LOGICO?', raciocinio_logico).
