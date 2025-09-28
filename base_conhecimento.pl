@@ -155,3 +155,72 @@ pergunta(12, 'Voce tem afinidade com TOMADA DE DECISAO?', tomada_de_decisao).
 pergunta(13, 'Voce tem afinidade com CRIPTOGRAFIA?', criptografia).
 pergunta(14, 'Voce tem afinidade com INVESTIGACAO DE FALHAS?', investigacao_de_falhas).
 pergunta(15, 'Voce tem afinidade com RACIOCINIO LOGICO?', raciocinio_logico).
+
+% DINAMICOS
+:- dynamic resposta/2.
+:- dynamic resultado/2.
+:- dynamic detalhe/3.
+
+listaEsps([
+    computacao_quantica,
+    internet_of_things,
+    desenvolvimento_de_jogos,
+    ciencia_de_dados,
+    ciberseguranca
+]).
+
+listaIds([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]).
+
+iniciar :-
+    listaIds(Ids),
+    faz_perguntas(Ids),
+    listaEsps(Esps),
+    calcularPontuacao(Ids, Esps, [], Lista),
+    sort(2, @>=, Lista, ListaOrdenada),  
+	exibir_resultados(ListaOrdenada).
+
+% FAZER PERGUNTAS
+faz_perguntas([]).
+faz_perguntas([Id|T]) :-
+    pergunta(Id, Texto, _),
+    format("~w (s/n): ", [Texto]),
+    read(Resp),
+    (Resp = s ; Resp = n),
+    assertz(resposta(Id, Resp)),
+    faz_perguntas(T).
+
+% CALCULAR PONTUACAO
+calcularPontuacao(_, [], Lista, Lista).
+calcularPontuacao(Ids, [Esp|T], Lista, Final) :-
+    percorrerPerguntas(Ids, Esp, 0, Total),
+    armazenarResultado(Lista, Esp, Total, NovaLista),
+    calcularPontuacao(Ids, T, NovaLista, Final).
+
+percorrerPerguntas([], _, Anterior, Anterior).
+percorrerPerguntas([Id|T], Esp, Anterior, Resultado) :-
+    resposta(Id, s),
+    pergunta(Id, _, Habilidade),
+    perfil(Esp, Habilidade, Pontos),
+    Novo is Anterior + Pontos,
+    assertz(detalhe(Esp, Habilidade, Pontos)),
+    percorrerPerguntas(T, Esp, Novo, Resultado).
+percorrerPerguntas([Id|T], Esp, Anterior, Resultado) :-
+    resposta(Id, n),
+    percorrerPerguntas(T, Esp, Anterior, Resultado).
+
+armazenarResultado(Lista, Esp, Total, [(Esp,Total)|Lista]).
+
+% EXIBIR RESULTADOS
+exibir_resultados([]).
+exibir_resultados([(Esp,Pontos)|T]) :-
+    trilha(Esp, Desc),
+    format("~n~w (~w pontos): ~w~n", [Esp, Pontos, Desc]),
+    exibir_detalhes(Esp),
+    exibir_resultados(T).
+
+% EXIBIR DETALHES
+exibir_detalhes(Esp) :-
+    detalhe(Esp, Hab, Pts),
+    format("  - Respondeu SIM para ~w (+~w)~n", [Hab, Pts]),
+    fail.
+exibir_detalhes(_).
