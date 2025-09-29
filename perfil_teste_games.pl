@@ -1,33 +1,16 @@
 % Perfil de teste: forte em criatividade, design, UX, lógica, análise, matemática.
-:- dynamic resposta/2, resultado/2, detalhe/3.
-
-limpar :-
-    retractall(resposta(_,_)),
-    retractall(resultado(_,_)),
-    retractall(detalhe(_,_,_)).
-
-carregar_respostas :-
-    assertz(resposta(1, n)),   % fisica
-    assertz(resposta(2, s)),   % matematica
-    assertz(resposta(3, n)),   % pesquisa
-    assertz(resposta(4, n)),   % eletronica
-    assertz(resposta(5, s)),   % solucoes
-    assertz(resposta(6, n)),   % automacao
-    assertz(resposta(7, s)),   % design
-    assertz(resposta(8, s)),   % user_experience
-    assertz(resposta(9, s)),   % criatividade
-    assertz(resposta(10, n)),  % estatistica
-    assertz(resposta(11, s)),  % analise
-    assertz(resposta(12, n)),  % tomada_de_decisao
-    assertz(resposta(13, n)),  % criptografia
-    assertz(resposta(14, n)),  % investigacao_de_falhas
-    assertz(resposta(15, s)).  % raciocinio_logico
-
-executar_teste :-
-    limpar,
-    carregar_respostas,
-    listaIds(Ids),
-    listaEsps(Esps),
-    calcularPontuacao(Ids, Esps, [], Lista),
-    sort(2, @>=, Lista, ListaOrdenada),
-    exibir_resultados(ListaOrdenada).
+resposta(1, n).
+resposta(2, s).
+resposta(3, n).
+resposta(4, n).
+resposta(5, s).
+resposta(6, n).
+resposta(7, s).
+resposta(8, s).
+resposta(9, s).
+resposta(10, n).
+resposta(11, s).
+resposta(12, n).
+resposta(13, n).
+resposta(14, n).
+resposta(15, s).

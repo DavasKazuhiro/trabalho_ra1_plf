@@ -171,6 +171,7 @@ listaEsps([
 
 listaIds([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]).
 
+%Modo interativo
 iniciar :-
     listaIds(Ids),
     faz_perguntas(Ids),
@@ -178,6 +179,16 @@ iniciar :-
     calcularPontuacao(Ids, Esps, [], Lista),
     sort(2, @>=, Lista, ListaOrdenada),  
 	exibir_resultados(ListaOrdenada).
+
+% Modo com arquivo de testes
+iniciarComArquivoTeste(Arquivo) :-
+    consult(Arquivo),
+    listaIds(Ids),
+    listaEsps(Esps),
+    calcularPontuacao(Ids, Esps, [], Lista),
+    sort(2, @>=, Lista, ListaOrdenada),
+    exibir_resultados(ListaOrdenada).
+
 
 % FAZER PERGUNTAS
 faz_perguntas([]).
