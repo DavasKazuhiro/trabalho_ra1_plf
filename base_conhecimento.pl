@@ -173,6 +173,9 @@ listaIds([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]).
 
 %Modo interativo
 iniciar :-
+    retractall(resposta(_,_)),
+    retractall(detalhe(_,_,_)),
+    retractall(resultado(_,_)),
     listaIds(Ids),
     faz_perguntas(Ids),
     listaEsps(Esps),
@@ -182,6 +185,9 @@ iniciar :-
 
 % Modo com arquivo de testes
 iniciarComArquivoTeste(Arquivo) :-
+    retractall(resposta(_,_)),
+    retractall(detalhe(_,_,_)),
+    retractall(resultado(_,_)),
     consult(Arquivo),
     listaIds(Ids),
     listaEsps(Esps),
