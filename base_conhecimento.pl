@@ -9,9 +9,9 @@ especializacao(ciberseguranca).
 % TRILHAS (especializacao, descricao)
 trilha(computacao_quantica, 'Estudo e desenvolvimento de sistemas baseados nos principios da mecanica quantica.').
 trilha(internet_of_things, 'Desenvolvimento de sistemas conectados envolvendo sensores, dispositivos embarcados e automacao.').
-trilha(desenvolvimento_de_jogos, 'Design, programação gráfica e uso de engines especializadas para criacao de jogos digitais.').  
-trilha(ciencia_de_dados, 'Análise e interpretação de grandes volumes de dados para gerar insights e apoiar decisões.').
-trilha(ciberseguranca, 'Proteção de sistemas, redes e informações contra ataques e ameaças ciberneticas.').
+trilha(desenvolvimento_de_jogos, 'Design, programacao grafica e uso de engines especializadas para criacao de jogos digitais.').  
+trilha(ciencia_de_dados, 'Analise e interpretação de grandes volumes de dados para gerar insights e apoiar decisoes.').
+trilha(ciberseguranca, 'Proteção de sistemas, redes e informacoes contra ataques e ameaças ciberneticas.').
 
 
 % HABILIDADES
@@ -243,4 +243,5 @@ exibir_detalhes(Esp) :-
     detalhe(Esp, Hab, Pts),
     format("  - Respondeu SIM para ~w (+~w)~n", [Hab, Pts]),
     fail.
+
 exibir_detalhes(_).
