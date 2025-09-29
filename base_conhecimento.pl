@@ -184,9 +184,12 @@ faz_perguntas([]).
 faz_perguntas([Id|T]) :-
     pergunta(Id, Texto, _),
     format("~w (s/n): ", [Texto]),
-    read(Resp),
-    (Resp = s ; Resp = n),
-    assertz(resposta(Id, Resp)),
+    read_line_to_string(user_input, Input0),
+    normalize_space(string(Input1), Input0), 
+    string_lower(Input1, Input2),      
+    ( Input2 = "s" ; Input2 = "n" ),          
+    atom_string(RespostaAtomo, Input2),            
+    assertz(resposta(Id, RespostaAtomo)),          
     faz_perguntas(T).
 
 % CALCULAR PONTUACAO
